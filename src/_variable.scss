@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&display=swap');
+
+//colors
+$primary-color: #FBFBFB;
+$secondary-color: #39CDCC;
+$light-secondary-color: #ddf7f7a5;
+$text-color: #213F7D;
+
+//fonts
+$primary-font: 14px;
+$sidebar-font: 16px;
+
+//font-family
+$work-sans-font: 'Work Sans', sans-serif;
+
+//mixin
+@mixin flex-align {
+  display: flex;
+  align-items: center;
+}
+
