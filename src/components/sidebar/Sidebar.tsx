@@ -5,10 +5,13 @@ import organization from './assets/change-org.png'
 import change from './assets/drop-down.png'
 import './style/styles.scss'
 import { Business, Customers, Settings } from './group'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { logoff } from './utils/Accessory'
 
 const Sidebar = () => {
   return (
-    <nav>
+    <nav className='side-bar'>
       <div className='drop-down'>
         <img src={organization} alt='change organization' />
         <p>Switch Organization</p>
@@ -18,6 +21,10 @@ const Sidebar = () => {
       <Customers />
       <Business />
       <Settings />
+      <button onClick={logoff}>
+        <span>Logout</span>
+        <FontAwesomeIcon icon={faArrowRightFromBracket}/>
+      </button>
     </nav>
   )
 }

@@ -19,3 +19,37 @@ $work-sans-font: 'Work Sans', sans-serif;
   align-items: center;
 }
 
+@mixin flex-space {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin form-input {
+  padding: .5rem;
+  outline: none;
+  border: 1px solid rgb(198, 198, 198);
+  border-radius: 5px;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin button {
+  background-color: $secondary-color;
+  padding: .5rem;
+  outline: none;
+  border-radius: 3px;
+  border: 1px;
+  width: fit-content;
+  color: white;
+}
+
