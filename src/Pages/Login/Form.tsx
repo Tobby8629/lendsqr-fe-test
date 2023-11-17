@@ -24,6 +24,7 @@ const Form = () => {
           <label htmlFor='password'>Password</label>
           <input type='password' id='password' value={user.password} onChange={(e)=> setuser({...user, password: e.target.value})} />
       </div>
+      <p>Forget password?</p>
       <button type='submit'>Login</button>
     </form>
   )

@@ -15,6 +15,10 @@ const Login = () => {
           <div className='image'>
             <img src = {image} alt='welcome to lendsqr' />
           </div>
+          <div className='text'>
+            <h3>Welcome!</h3>
+            <p>Enter details to login</p>
+          </div>
           <Form />
         </main>
     </section>

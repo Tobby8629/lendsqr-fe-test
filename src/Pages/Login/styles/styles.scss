@@ -3,9 +3,20 @@
 .login {
     width: 100%;
     height: 100vh;
+    text-align: left;
+    padding: .5rem 1.5rem;
   .logo {
     @include flex-center;
   }
+
+  .text {
+    margin: 1.2rem 0;
+    text-align: left;
+    p {
+      margin: .5rem 0;
+    }
+  }
+
   .image {
     margin: 1rem 0;
     img {
@@ -13,11 +24,17 @@
     }
   }
   form {
-    padding: .5rem;
+    margin: 2rem 0;
     button {
        @include button;
        width: 100%;
        font-size: 15px
+    }
+
+    p {
+      color: $secondary-color;
+      margin-bottom: 1rem;
+      font-size: 14px;
     }
   }
   .form-input {
@@ -27,7 +44,6 @@
     input {
       @include form-input;
       margin: .5rem 0;
-      padding: .5rem 1rem;
       border-radius: 5px;
       font-size: 15px
     }
