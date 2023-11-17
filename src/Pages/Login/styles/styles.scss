@@ -49,3 +49,49 @@
     }
   }
 }
+
+@media (min-width: 768px) {
+  .login {
+      width: 85%;
+      margin: auto;
+    .logo {
+      justify-content: unset;
+      align-items: unset;
+    }
+    main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .image,
+      .form {
+        width: 45%;
+      }
+      .image {
+        height: 100%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+ .login {
+    width: 70%;
+    padding: 4rem 0;
+    .logo {
+        margin-bottom: 3rem;
+    }
+    main {
+      .image {
+        width: 50%;
+      }
+    }
+  .form {
+    h3 {
+      font-size: 40px;
+    }
+    .text {
+      margin: 2rem 0;
+    }
+  }
+ }
+}
