@@ -76,10 +76,25 @@
     }
     .nav-form {
       display: block;
+      border-radius: 10px;
       input {
-      @include form-input;
-      width: 250px;
-      margin-right: .5rem;
+       @include form-input;
+        padding: .7rem;
+      width: 300px;
+      border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+      }
+      button {
+        background-color: $secondary-color;
+       @include button;
+        padding: .8rem 1rem;
+        color: white;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
       }
     }
   } 
