@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 interface font {
   icon: string;
@@ -9,8 +10,10 @@ interface font {
 const List = ({icon,text}: font) => {
   return (
     <li> 
-      <img src={icon} alt={text} />
-      <span className='text'>{text}</span>
+      <Link to="/">
+        <img src={icon} alt={text} />
+        <span className='text'>{text}</span>
+      </Link>
     </li>
   )
 }

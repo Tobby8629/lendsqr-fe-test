@@ -1,9 +1,58 @@
 @import '../../../variable';
 
 .dashboard {
-  margin-top: 60px;
+  margin-top: 50px;
   padding: 1rem;
   .top {
-    @include flex-space
+    @include flex-space;
+    margin: 1rem 0;
+    h3 {
+      font-weight: 500;
+      font-size: 24px;
+      text-transform: capitalize;
+      line-height: 28.15px
+    }
   }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    grid-gap: 2rem;
+  }
+  .card {
+    background-color: #ffffff;
+    padding: 1rem 2rem;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border-radius: 4px;
+    .image {
+      width: 35px;
+      img {
+        width: 100%;
+      };
+    }
+    p {
+      margin: .8rem 0;
+      text-transform: uppercase;
+      font-family: Work Sans;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+ .dashboard {
+  width: calc(95% - 300px);
+  margin-left: auto;
+  margin-top: 70px;
+  .top {
+    margin: 3rem 0;
+  }
+  .icon {
+    display: none;
+  }
+ } 
 }

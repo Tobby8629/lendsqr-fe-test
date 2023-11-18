@@ -25,7 +25,7 @@ const Sidebar = ({open}: toogle) => {
       <Customers />
       <Business />
       <Settings />
-      <button onClick={logoff}>
+      <button onClick={logoff} className='button'>
         <span>Logout</span>
         <FontAwesomeIcon icon={faArrowRightFromBracket}/>
       </button>

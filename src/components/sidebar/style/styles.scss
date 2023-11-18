@@ -49,6 +49,27 @@
   }
 }
 
+.button {
+  outline: none;
+  border: none;
+  font-size: 16px;
+  background-color: transparent;
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  border-radius: 5px;
+  transition: .3s linear;
+  @include flex-align;
+  span {
+    margin-right: .7rem;
+  }
+  &:hover {
+    background-color: $secondary-color;
+    transform: translateX(10px);
+    color: white;
+  }
+}
+
 .open {
   left: 0;
 }
@@ -60,10 +81,10 @@
   }
 
   .side-bar {
-    width: 300px;
+    width: 320px;
     left: 0;
     padding: 3rem 0;
-    padding-bottom: 8rem;
+    padding-bottom: 5rem;
     margin-top: 65px;
     h3 {
       padding: 0 1.5rem; 
@@ -83,5 +104,8 @@
         margin: 0 0.6rem;
       }
     }
+  }
+  .button {
+    padding: 1rem 2rem;
   }
 }
