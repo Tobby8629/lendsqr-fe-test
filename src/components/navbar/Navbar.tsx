@@ -6,7 +6,7 @@ import './styles/styles.scss'
 const Navbar = () => {
   return (
     <nav className='top-bar'>
-      <div>
+      <div className='nav-logo'>
         <img src={logo} alt='logo'/>
       </div>
       <Searchbar />

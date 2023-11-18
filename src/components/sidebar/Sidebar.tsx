@@ -9,9 +9,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import { logoff } from './utils/Accessory'
 
-const Sidebar = () => {
+interface toogle {
+  open: boolean
+}
+
+const Sidebar = ({open}: toogle) => {
   return (
-    <nav className='side-bar'>
+    <nav className={open ? 'side-bar open' : 'side-bar'}>
       <div className='drop-down'>
         <img src={organization} alt='change organization' />
         <p>Switch Organization</p>
