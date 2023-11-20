@@ -7,10 +7,14 @@ import user from './Assets/users.png'
 import active from './Assets/active.png'
 import loan from './Assets/loan.png'
 import savings from './Assets/saving.png'
+import DashboardTable from './utils/DashboardTable'
+import Popup from './utils/Popup'
+import Menu from './utils/Menu'
 
 interface toogle {
   open: boolean,
-  setopen: (open: boolean) => void
+  setopen: (open: boolean) => void,
+
 }
 
 const Main = ({open, setopen}: toogle) => {
@@ -18,10 +22,7 @@ const Main = ({open, setopen}: toogle) => {
     <main className='dashboard'>
       <div className='top'>
         <h3>Users</h3>
-        <div className='icon'>
-          {open ? <FontAwesomeIcon icon={faTimes} onClick={() =>setopen(false)}/> :
-          <FontAwesomeIcon icon={faBars} onClick={() =>setopen(true)}/> }
-        </div>
+        <Menu open={open} setopen={setopen}/>
       </div>
       <section className='grid'>
         <Card image={user} status='Users' value={'2,000'}/>
@@ -29,6 +30,7 @@ const Main = ({open, setopen}: toogle) => {
         <Card image={loan} status='Users with Loans' value={'2,000'}/>
         <Card image={savings} status='Users with Savings' value={'2,000'}/>
       </section>
+      <DashboardTable />
     </main>
   )
 }

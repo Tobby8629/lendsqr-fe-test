@@ -7,14 +7,26 @@
 }
 
 .App {
-  text-align: center;
+  // text-align: center;
   color: $text-color;
   background-color: $primary-color;
+  margin-top: 50px;
+  padding: 1rem;
 }
 
 a {
   text-decoration: none;
   color: $text-color;
+}
+
+@media (min-width: 1024px) {
+  .App {
+    width: calc(100% - 320px);
+  margin-left: auto;
+  margin-top: 70px;
+  padding: 1rem 2rem;
+  padding-right: 4rem;
+  }
 }
 
 

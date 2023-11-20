@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
-import { Navbar, Sidebar } from '../../components'
+import React from 'react'
 import Main from '../../components/Main/Main'
 
-const Dashboard = () => {
-  const [open, setopen] = useState(false)
+interface dashboard_interface {
+  open: boolean,
+  setopen: (open: boolean) => void
+}
+
+const Dashboard = ({open, setopen}: dashboard_interface) => {
+ 
   return (
     <div>
-      <Navbar />
-      <Sidebar open = {open} />
-      <Main open={open} setopen={setopen}/>
+      <Main open={open} setopen={setopen} />
     </div>
   )
 }
