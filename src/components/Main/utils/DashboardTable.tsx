@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import TableHeader from './TableHeader'
 import Popup from './Popup'
 import TableBody from './TableBody'
@@ -13,7 +13,7 @@ const DashboardTable = () => {
     {title: "Status", id: 6},
   ]
 
-  const [popup, setpopup] = useState(true)
+  const [popup, setpopup] = useState(false)
 
   return (
     <div className='wrap'>

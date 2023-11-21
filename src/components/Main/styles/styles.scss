@@ -129,6 +129,26 @@
   }
 }
 
+.pagination {
+  .dropdown {
+   @include flex-align;
+    font-size: 11px;
+  }
+  select {
+    outline: none;
+    border: none;
+    background-color: rgb(231, 230, 230);
+    padding: .2rem .5rem;
+    border-radius: 3px;
+    margin: 0 .2rem;
+  }
+  option {
+    background-color: beige;
+    outline: none;
+    border: none;
+  }
+}
+
 @media (min-width: 1024px) {
  .dashboard {
   .top {

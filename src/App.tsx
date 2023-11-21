@@ -25,7 +25,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path='/' element={<PrivateRoute/>}>
           <Route path="/" element={<Dashboard setopen={setopen} open={open}/>} />
-          <Route path="/details" element={<Details setopen={setopen} open={open} />} />
+          <Route path="/:id" element={<Details setopen={setopen} open={open} />} />
         </Route>
       </Routes>
     </div>

@@ -7,6 +7,7 @@ import loan from './Assets/loan.png'
 import savings from './Assets/saving.png'
 import DashboardTable from './utils/DashboardTable'
 import Menu from './utils/Menu'
+import Pagination from './utils/Pagination'
 
 interface toogle {
   open: boolean,
@@ -28,6 +29,7 @@ const Main = ({open, setopen}: toogle) => {
         <Card image={savings} status='Users with Savings' value={'2,000'}/>
       </section>
       <DashboardTable />
+      <Pagination />
     </main>
   )
 }

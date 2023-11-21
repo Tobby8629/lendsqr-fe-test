@@ -5,13 +5,15 @@ import { Link } from 'react-router-dom'
 import './styles.scss'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import Menu from '../Main/utils/Menu'
+import { user } from '../Main/utils/Interface'
 
 interface menu_interface {
   open: boolean,
+  user: user,
   setopen: (open: boolean) => void,
 }
 
-const Header = ({open,setopen}: menu_interface ) => {
+const Header = ({open,setopen, user}: menu_interface ) => {
   const [desktop, setdesktop] = useState(false)
   useEffect(()=>{
     const resize = () => {
@@ -47,13 +49,17 @@ const Header = ({open,setopen}: menu_interface ) => {
               <FontAwesomeIcon icon={faUser} size='lg' />
             </div>
             <div className='username'>
-              <h3>Grace Effiom</h3>
+              <h3>{user.full_name}</h3>
               <p>svjdjdcjc</p>
             </div>
+          </div>
+          <div className='div'>
           </div>
           <div className='acct-detail'>
             <p>user's tier</p>
             <p>stars</p>
+          </div>
+          <div className='div'>
           </div>
           <div className='acct-bal'>
             <h3>200,000</h3>

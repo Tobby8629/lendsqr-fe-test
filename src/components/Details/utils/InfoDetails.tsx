@@ -2,7 +2,7 @@ import React from 'react'
 
 interface detail_interface {
   label: string,
-  detail: string,
+  detail: string | number,
 }
 
 const InfoDetails = ({label, detail}: detail_interface) => {
