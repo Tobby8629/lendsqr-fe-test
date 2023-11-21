@@ -9,7 +9,7 @@
     background-color: white;
     top: 0;
     left: 0;
-    z-index: 99;
+    z-index: 999;
   .logo {
     @include flex-center;
   }
@@ -81,11 +81,12 @@
 @media (min-width: 1280px) {
  .login {
     width: 100%;
-    padding: 4rem 18rem;
+    padding: 4rem 15rem;
     .logo {
-        margin-bottom: 3rem;
+      margin-bottom: 3rem;
     }
     main {
+      align-items: endss;
       .image {
         width: 50%;
       }

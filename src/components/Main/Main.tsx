@@ -1,5 +1,3 @@
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import './styles/styles.scss'
 import Card from './utils/Card'
@@ -8,7 +6,6 @@ import active from './Assets/active.png'
 import loan from './Assets/loan.png'
 import savings from './Assets/saving.png'
 import DashboardTable from './utils/DashboardTable'
-import Popup from './utils/Popup'
 import Menu from './utils/Menu'
 
 interface toogle {

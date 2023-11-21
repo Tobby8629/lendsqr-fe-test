@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import TableHeader from './TableHeader'
 import Popup from './Popup'
+import TableBody from './TableBody'
 
 const DashboardTable = () => {
   const header = [
@@ -13,7 +14,7 @@ const DashboardTable = () => {
   ]
 
   const [popup, setpopup] = useState(true)
-   useEffect(()=> console.log(popup))
+
   return (
     <div className='wrap'>
     <table>
@@ -24,8 +25,7 @@ const DashboardTable = () => {
           ))}
         </tr>
       </thead>
-      <tbody>
-      </tbody>
+      <TableBody />
     </table>
     {popup && <Popup />}
     </div>
