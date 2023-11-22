@@ -195,8 +195,11 @@
       border-right: none;
       padding: 1rem;
       margin: 0;
+      p {
+        font-size: 12px;
+      }
     }
-
+    
   }
 
 
@@ -208,6 +211,7 @@
   }
   .profile {
     padding: 1rem 1.5rem;
+    padding-bottom: 0;
     .profile-tab {
       li {
         font-size: $sidebar-font;

@@ -6,7 +6,7 @@ export const dateConvert = (dateInfo: DateInfo) => {
     const inputDate = new Date(dateInfo.date);
     const options = {
       year: 'numeric' as const,
-      month: 'long' as const,
+      month: 'short' as const,
       day: 'numeric' as const,
       hour: 'numeric' as const,
       minute: 'numeric' as const,

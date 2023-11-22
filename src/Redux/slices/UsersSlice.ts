@@ -46,7 +46,11 @@ const initialState: UsersState = {
         monthly_income: 0,
         residence_type: "",
         status: "",
-        twitter: ""
+        twitter: "",
+        Amount: 0,
+    account_number: 0,
+    bank: "string",
+    serial: "string",
     }
 }
 
@@ -55,6 +59,7 @@ const usersSlice = createSlice({
     initialState,
     reducers: {
         // findUser: (state, action: PayloadAction<any>) => {
+        // fetchUsers()
         //  const data = state.users.find((user) => user.id === action.payload);
         //  state.info = data
         // }
@@ -67,16 +72,14 @@ const usersSlice = createSlice({
             .addCase(fetchUsers.fulfilled, (state, action) => {
                 state.loading = false;
                 state.users = action.payload.data.users;
-                console.log(action.payload.id)
-                state.info = state.users.find(u => u.id === action.payload.id)
-                state.newUserData = DashboardData(state.users)
-
-                
+                action.payload.id && (state.info = state.users.find(u => u.id === action.payload.id))
+                state.newUserData = DashboardData(state.users);
             })
             .addCase(fetchUsers.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error
             });
+    
     }
 });
 

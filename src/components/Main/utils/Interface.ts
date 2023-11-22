@@ -29,6 +29,10 @@ interface Guarantor {
     residence_type: string
     status: string
     twitter: string
+    Amount: number
+    account_number: number
+    bank: string
+    serial: string
 }
 
 export interface information {

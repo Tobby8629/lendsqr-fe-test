@@ -5,6 +5,7 @@ import { DashboardData } from './DashboardData';
 import More from './More';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { user } from './Interface';
 
 interface information {
     id: string,
@@ -18,7 +19,6 @@ interface information {
 
 const TableBody = () => {
     const [openmore, setopenmore] = useState(true)
-    const [data, setdata] = useState<any>()
     const dispatch:any  = useDispatch();
 
     useEffect(() => {
@@ -26,7 +26,7 @@ const TableBody = () => {
     }, [dispatch])
     
     const users = useSelector((state: any)=> state.user.newUserData)
-    
+    const data = users.slice(0,9)
     const controlMore = () => {
       // setopenmore((prev)=>(
     //   prev.map((more)=> {
@@ -37,14 +37,19 @@ const TableBody = () => {
     
   return (
    <tbody>
-       {users.map((user: information)=>(
-        <tr style={{textAlign: 'center', padding: '.5rem', borderBottom: '1px solid gray'}} key={user.id}>
-         <td style={{textAlign: 'left', fontSize:"14px"}}>{user.organization}</td>
-         <td style={{textAlign: 'left', fontSize:"14px"}}>{user.user}</td>
-         <td style={{textAlign: 'left', fontSize:"14px"}}>{user.email}</td>
-         <td style={{textAlign: 'left', fontSize:"14px"}}>{user.phone_number}</td>
-         <td style={{textAlign: 'left', fontSize:"14px"}}>{user.date_joined}</td>
-         <td style={{textAlign: 'left', fontSize:"14px"}}>{user.status}</td>
+       {data.map((user: information)=>(
+        <tr key={user.id}>
+         <td>{user.organization}</td>
+         <td>{user.user}</td>
+         <td>{user.email}</td>
+         <td>{user.phone_number}</td>
+         <td>{user.date_joined}</td>
+         <td>
+          {user.status=== "pending" && <button className="pending">{user.status}</button>}
+          {user.status === "active" && <button className="active">{user.status}</button>}
+          {user.status === "blacklist"  && <button className="blacklist">{user.status}</button>}
+          {user.status === "inactive" && <button className="inactive">{user.status}</button>}
+         </td>
          <td onClick={controlMore}>
            <FontAwesomeIcon icon={faEllipsis}/>
          </td>

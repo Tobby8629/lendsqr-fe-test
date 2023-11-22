@@ -50,7 +50,7 @@ const Header = ({open,setopen, user}: menu_interface ) => {
             </div>
             <div className='username'>
               <h3>{user.full_name}</h3>
-              <p>svjdjdcjc</p>
+              <p>{user.serial}</p>
             </div>
           </div>
           <div className='div'>
@@ -62,8 +62,8 @@ const Header = ({open,setopen, user}: menu_interface ) => {
           <div className='div'>
           </div>
           <div className='acct-bal'>
-            <h3>200,000</h3>
-            <p>vfd bank</p>
+            <h3>{`₦${user.Amount.toLocaleString()}`}</h3>
+            <p>{`${user.account_number}/${user.bank} Bank`}</p>
           </div>
         </div>
         <div className='profile-tab'>

@@ -25,7 +25,7 @@ const Main = ({info}: User_info) => {
         <InfoDetails label='sector of employment' detail={info.job_sector} />
       <InfoDetails label='duration of employment' detail= {info.job_duration} />
         <InfoDetails label='office email' detail={`${info.user}@${info.organization}.com`} />
-        <InfoDetails label='monthly income' detail={` ₦${info.monthly_income} -  ₦${info.monthly_income * 3}`} />
+        <InfoDetails label='monthly income' detail={` ₦${info.monthly_income.toLocaleString()} -  ₦${info.monthly_income.toLocaleString()}`} />
         <InfoDetails label='loan repayment' detail={info.loan_repay} />
        
       </div>

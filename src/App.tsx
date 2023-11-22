@@ -5,7 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import PrivateRoute from './authentication/ProtectedRoute';
 import { Navbar, Sidebar } from './components/Main';
 import Details from './Pages/UserDetail/Details';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {fetchUsers } from './Redux/slices/UsersSlice';
 
 
@@ -15,7 +15,6 @@ function App() {
     dispatch(fetchUsers());
   }, [dispatch])
   const [open, setopen] = useState(false)
-  const data = useSelector((state: any)=>state.users)
  
   return (
     <div className="App">

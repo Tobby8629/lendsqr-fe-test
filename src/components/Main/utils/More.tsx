@@ -7,7 +7,7 @@ interface link {
 
 const More = ({id}: link) => {
   return (
-    <div>
+    <td>
       <button>
         <Link to={`/${id}`}>View details</Link>
       </button>
@@ -17,7 +17,7 @@ const More = ({id}: link) => {
       <button>
         <span>Activate user</span>
       </button>
-    </div>
+    </td>
   )
 }
 
