@@ -6,6 +6,7 @@ import './styles.scss'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
 import Menu from '../Main/utils/Menu'
 import { user } from '../Main/utils/Interface'
+import StarRating from './utils/Stars'
 
 interface menu_interface {
   open: boolean,
@@ -57,7 +58,7 @@ const Header = ({open,setopen, user}: menu_interface ) => {
           </div>
           <div className='acct-detail'>
             <p>user's tier</p>
-            <p>stars</p>
+            <StarRating numberOfStars={user.star}/>
           </div>
           <div className='div'>
           </div>

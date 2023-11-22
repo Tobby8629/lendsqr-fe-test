@@ -10,6 +10,7 @@ import Menu from './utils/Menu'
 import Pagination from './utils/Pagination'
 import { useSelector } from 'react-redux'
 import { user } from './utils/Interface'
+import Loading from '../Loading/Loading'
 
 interface toogle {
   open: boolean,
@@ -22,9 +23,11 @@ const Main = ({open, setopen}: toogle) => {
   const activated = users.filter((user: user)=>user.status === 'active')
   const onLoan = users.filter((user: user)=>user.loan_repay >  0)
   const withSavings = users.filter((user: user)=>user.Amount >  0)
-
+  console.log(users)
   return (
-    <main className='dashboard'>
+  <>
+    {users.length > 0 ?
+    <main className='dashboard wrapper'>
       <div className='top'>
         <h3>Users</h3>
         <Menu open={open} setopen={setopen}/>
@@ -36,8 +39,10 @@ const Main = ({open, setopen}: toogle) => {
         <Card image={savings} status='Users with Savings' value={withSavings.length}/> 
       </section>
       <DashboardTable />
-      <Pagination />
-    </main>
+      <Pagination />  
+    </main>  : <Loading />
+  }
+  </>
   )
 }
 

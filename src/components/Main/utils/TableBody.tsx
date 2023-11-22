@@ -18,7 +18,7 @@ interface information {
    }
 
 const TableBody = () => {
-    const [openmore, setopenmore] = useState(true)
+    // const [openmore, setopenmore] = useState<user[]>()
     const dispatch:any  = useDispatch();
 
     useEffect(() => {
@@ -26,19 +26,20 @@ const TableBody = () => {
     }, [dispatch])
     
     const users = useSelector((state: any)=> state.user.newUserData)
+    // setopenmore({...openmore, ...users})
     const data = users.slice(0,9)
-    const controlMore = () => {
-      // setopenmore((prev)=>(
-    //   prev.map((more)=> {
-    //     if(more.id === id) 
-    //   })
-    // ) )
-    }
+    const [openRowId, setOpenRowId] = useState<string | null>(null);
+
+    const controlMore = (id: string) => {
+      // Toggle the open state for the clicked row
+      setOpenRowId((prev) => (prev === id ? null : id));
+    };
+  
     
   return (
    <tbody>
        {data.map((user: information)=>(
-        <tr key={user.id}>
+        <tr key={user.id} className='dashboard-row'>
          <td>{user.organization}</td>
          <td>{user.user}</td>
          <td>{user.email}</td>
@@ -50,10 +51,10 @@ const TableBody = () => {
           {user.status === "blacklist"  && <button className="blacklist">{user.status}</button>}
           {user.status === "inactive" && <button className="inactive">{user.status}</button>}
          </td>
-         <td onClick={controlMore}>
+         <td onClick={()=>controlMore(user.id)}>
            <FontAwesomeIcon icon={faEllipsis}/>
          </td>
-         {openmore && <More id={user.id} />}
+         {openRowId === user.id && <More id={user.id} openRowId={openRowId} setOpenRowId = {setOpenRowId} />}
         </tr>
        ))}
    </tbody>

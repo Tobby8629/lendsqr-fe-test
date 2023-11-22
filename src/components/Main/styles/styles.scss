@@ -11,14 +11,19 @@
     padding: 1rem 2rem;
     border-radius: 10px;
   .form-popup {
-    // position: absolute;
-    // top: 4rem;
+    position: absolute;
+    display: hidden;
+    top: 5rem;
+    z-index: 99;
+    opacity: 0;
+    background-color: white;
     margin-top: 1rem;
     width: 250px;
     text-align: left;
-    padding: 1rem 1rem;
+    padding: 1.5rem;
     box-shadow: 0px .5px .5px .5px rgb(213, 210, 210);
     border-radius: 8px;
+    transition: .3s linear;
     .filter-input {
       display: flex;
       flex-direction: column;
@@ -53,6 +58,9 @@
       color: $text-color;
     }
     } 
+  }
+  .show {
+    opacity: 1;
   }
   }
   .top {
@@ -109,11 +117,39 @@
       tr {
        border-bottom: 1px solid rgba(227, 227, 227, 0.603);
        margin: 1rem 0;
+       position: relative;
        &:last-child {
          border-bottom: none;
        }
        td{
         padding: 1rem 0;
+       }
+       .more {
+        position: absolute;
+        right:-5px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        font-size: $primary-font;
+        z-index: 99;
+        padding: 2rem .5rem;
+        border-radius: 3px;
+        // box-shadow: 0px px 1px 1px gray;
+        button {
+          background-color: transparent;
+          color: $text-color;
+          margin: .5rem 0;
+          display: flex;
+        }
+        .text {
+          margin-left: .8rem;
+          display: block;
+        }
+        .times {
+          position: absolute;
+          top: 3px;
+          right: 3px;
+        }
        }
       }
       button {

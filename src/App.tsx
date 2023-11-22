@@ -7,6 +7,7 @@ import { Navbar, Sidebar } from './components/Main';
 import Details from './Pages/UserDetail/Details';
 import { useDispatch } from 'react-redux';
 import {fetchUsers } from './Redux/slices/UsersSlice';
+import Loading from './components/Loading/Loading';
 
 
 function App() {

@@ -1,27 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
+interface search {
+  organization: string, 
+  username: string,
+  email: string, 
+  date: string, 
+  phone: string,
+  status:string
+}
+interface popup_interface {
+  popup: boolean
+ }
 
-const Popup = () => {
+const Popup = ({popup}: popup_interface) => {
+  
+  const [param, setparam] = useState<search>()
   return (
-    <form className='form-popup'>
+    <form className={popup ? 'form-popup show' : 'form-popup'}>
       <div className='filter-input'>
         <label className='label-popup'>Organization</label>
         <select>
           <option value=''>select</option>
-          <option value='1'>Organization 1</option>
-          <option value='2'>Organization 2</option>
-          <option value='3'>Organization 3</option>
-          <option value='4'>Organization 4</option>
-          <option value='5'>Organization 5</option>
-          <option value='6'>Organization 6</option>
-          <option value='7'>Organization 7</option>
-          <option value='8'>Organization 8</option>
-          <option value='9'>Organization 9</option>
-          <option value='10'>Organization 10</option>
+          <option value='irorun'>Irorun</option>
+          <option value='lendstr'>Lendstr</option>
+          <option value='lendsqr'>Lendsqr</option>
         </select>
       </div>
       <div className='filter-input'>
         <label htmlFor='username'>username</label>
-        <input type='text' id='username' />
+        <input type='text' id='username' onChange={(e)=> setparam({...param, username: e.target.value })} />
       </div>
       <div className='filter-input'>
         <label htmlFor='email'>email</label>
@@ -39,16 +45,10 @@ const Popup = () => {
         <label className='label-popup'>status</label>
         <select>
           <option value=''>select</option>
-          <option value='1'>Organization 1</option>
-          <option value='2'>Organization 2</option>
-          <option value='3'>Organization 3</option>
-          <option value='4'>Organization 4</option>
-          <option value='5'>Organization 5</option>
-          <option value='6'>Organization 6</option>
-          <option value='7'>Organization 7</option>
-          <option value='8'>Organization 8</option>
-          <option value='9'>Organization 9</option>
-          <option value='10'>Organization 10</option>
+          <option value='active'>Active</option>
+          <option value='pending'>pending</option>
+          <option value='inactive'>inactive</option>
+          <option value='blacklist'>Blacklist</option>
         </select>
       </div>
       <div className='filter-btn'>

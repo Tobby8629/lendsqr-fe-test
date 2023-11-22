@@ -20,12 +20,15 @@ a {
 }
 
 @media (min-width: 1024px) {
+  .wrapper {
+    padding: 1rem 2rem;
+    padding-right: 4rem;
+  }
   .App {
     width: calc(100% - 320px);
-  margin-left: auto;
-  margin-top: 70px;
-  padding: 1rem 2rem;
-  padding-right: 4rem;
+    margin-left: auto;
+    margin-top: 70px;
+    padding: 0;
   }
 }
 

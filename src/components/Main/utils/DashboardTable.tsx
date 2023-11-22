@@ -12,7 +12,7 @@ const DashboardTable = () => {
       <TableHeader setpop={setpopup} popup = {popup}/>
       <TableBody />
     </table>
-    {popup && <Popup />}
+     <Popup popup = {popup} />
     </div>
   )
 }

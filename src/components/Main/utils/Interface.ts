@@ -33,6 +33,7 @@ interface Guarantor {
     account_number: number
     bank: string
     serial: string
+    star: number
 }
 
 export interface information {
